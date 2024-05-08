@@ -23,7 +23,10 @@ h2 {
 
 div#zentai {
 	display: grid;
-	flex-direction: row;
+	/* flex-direction: row; */
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 200px 200px;
+	grid-gap: 10px;
 	width: 1024px;
 }
 
@@ -31,9 +34,6 @@ div#zentai > div {
 	/* margin-left: 5px; */
 	padding: 5px;
 	background-color: #ffefaf;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 200px 200px;
-	grid-gap: 10px;
 }
 
 img {
