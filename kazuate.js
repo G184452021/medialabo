@@ -21,22 +21,31 @@ function hantei() {
   // 課題3-1: 正解判定する
   // kotae と yoso が一致するかどうか調べて結果を出力
   // 課題3-1における出力先はコンソール
-  console.log(`${kaisu+1}回目の予想: ${yoso}`);
-  if(kaisu < 3) {
+  kaisu++;
+  let span = document.querySelector('span#kaisu');
+  span.textContent = kaisu;
+  // console.log(`${kaisu+1}回目の予想: ${yoso}`);
+  span = document.querySelector('span#answer');
+  if(kaisu < 4) {
     if(kotae === yoso) {
-        console.log("正解です．おめでとう!");
+        // console.log("正解です．おめでとう!");
+        span.textContent = "正解です．おめでとう!";
         kaisu = 3;
-    } else if(kaisu === 2) {
-        console.log(`まちがい．残念でした答えは${kotae}です．`);
+    } else if(kaisu === 3) {
+        // console.log(`まちがい．残念でした答えは${kotae}です．`);
+        span.textContent = `まちがい．残念でした答えは${kotae}です．`;
     } else {
         if(yoso < kotae) {
-            console.log(`まちがい．答えはもっと大きいですよ`);
+            // console.log(`まちがい．答えはもっと大きいですよ`);
+            span.textContent = `まちがい．答えはもっと大きいですよ`;
         } else {
-            console.log(`まちがい．答えはもっと小さいですよ`);
+            // console.log(`まちがい．答えはもっと小さいですよ`);
+            span.textContent = `まちがい．答えはもっと小さいですよ`;
         }
     }
   } else {
-    console.log(`答えは${kotae}でした．すでにゲームは終わっています`);
+    // console.log(`答えは${kotae}でした．すでにゲームは終わっています`);
+    span.textContent = `答えは${kotae}でした．すでにゲームは終わっています`;
   }
-  kaisu++;
+  // kaisu++;
 }
